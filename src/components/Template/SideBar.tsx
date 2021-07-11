@@ -100,9 +100,22 @@ const SideBar = () => {
         <Stack direction="row">
           <ContactIcons />
         </Stack>
-        <p className="copyright">
-          &copy; Nilesh Moradiya <Link to="/">nileshmoradiya.in</Link>.
-        </p>
+        <Typography
+          display="inline"
+          variant="overline"
+          sx={{
+            color: 'text.disabled',
+          }}>
+          &copy; Nilesh Moradiya{' '}
+          <StyledLink
+            to="/"
+            label="nileshmoradiya.com"
+            typographyProps={{
+              variant: 'overline',
+            }}
+          />
+          .
+        </Typography>
       </Stack>
     </>
   );
