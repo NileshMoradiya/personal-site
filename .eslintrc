@@ -1,0 +1,7 @@
+{
+    "extends": [
+        "plugin:react/recommended"
+    ],
+    //Configuration goes here
+    "rules": {}
+}
