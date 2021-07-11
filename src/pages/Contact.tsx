@@ -7,7 +7,7 @@ const Contact = ({}: IContactProps) => {
   return (
     <>
       <Page title="Contact" description="Contact">
-        Contact
+        Contact(Coming soon...)
       </Page>
     </>
   );

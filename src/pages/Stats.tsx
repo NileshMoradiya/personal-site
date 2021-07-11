@@ -6,7 +6,7 @@ interface IStatsProps {}
 const Stats = ({}: IStatsProps) => {
   return (
     <Page title="Stats" description="Resume">
-      Stats
+      Stats(Coming soon...)
     </Page>
   );
 };
