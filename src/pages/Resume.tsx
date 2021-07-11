@@ -6,7 +6,7 @@ interface IResumeProps {}
 const Resume = ({}: IResumeProps) => {
   return (
     <Page title="Resume" description="Resume">
-      Resume
+      Resume(Coming soon...)
     </Page>
   );
 };

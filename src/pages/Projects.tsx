@@ -6,7 +6,7 @@ interface IProjectsProps {}
 const Projects = ({}: IProjectsProps) => {
   return (
     <Page title="Projects" description="Projects">
-      Projects
+      Projects(Coming soon...)
     </Page>
   );
 };

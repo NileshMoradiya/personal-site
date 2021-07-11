@@ -7,7 +7,7 @@ const About = ({}: IAboutProps) => {
   return (
     <>
       <Page title="About" description="About">
-        About
+        About(Coming soon...)
       </Page>
     </>
   );
