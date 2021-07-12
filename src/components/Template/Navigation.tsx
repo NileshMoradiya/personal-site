@@ -4,6 +4,7 @@ import {
   Box,
   Divider,
   Fab,
+  Hidden,
   Menu,
   MenuItem,
   Stack,
@@ -15,7 +16,6 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import StyledNavLink from '../StyledNavLink';
 import StyledTypography from '../StyledTypography';
 import routes from '../../data/routes';
-import useBreakpoints from '../../hooks/useBreakpoints';
 
 const { PUBLIC_URL } = process.env;
 const indexLinks = routes.filter((link) => link.index);
@@ -186,12 +186,14 @@ const MobileNavigation = () => {
 };
 
 const Navigation = () => {
-  const { md: mdDown } = useBreakpoints();
-
   return (
     <>
-      {mdDown && <MobileNavigation />}
-      {!mdDown && <DesktopNavigation />}
+      <Hidden mdDown>
+        <DesktopNavigation />
+      </Hidden>
+      <Hidden mdUp>
+        <MobileNavigation />
+      </Hidden>
     </>
   );
 };
