@@ -4,27 +4,24 @@ import {
   Box,
   Divider,
   Fab,
-  Hidden,
   Menu,
   MenuItem,
   Stack,
   Toolbar,
-  useTheme,
 } from '@material-ui/core';
 import React, { Fragment } from 'react';
 
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
-import { Style } from '@material-ui/icons';
 import StyledNavLink from '../StyledNavLink';
 import StyledTypography from '../StyledTypography';
 import routes from '../../data/routes';
+import useBreakpoints from '../../hooks/useBreakpoints';
 
 const { PUBLIC_URL } = process.env;
 const indexLinks = routes.filter((link) => link.index);
 const nonIndexLinks = routes.filter((link) => !link.index);
 
 const DesktopNavigation = () => {
-  const theme = useTheme();
   return (
     <AppBar
       variant="outlined"
@@ -160,48 +157,41 @@ const MobileMenu = () => {
 const MobileNavigation = () => {
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar variant="outlined" position="sticky">
-          <Toolbar variant="dense">
-            <Box justifyContent="center" sx={{ flexGrow: 1 }}>
-              <StyledNavLink to="/" label="Home">
-                <StyledTypography
-                  variant="button"
-                  bold={true}
-                  capitalized={true}>
-                  Nilesh Moradiya
-                </StyledTypography>
-              </StyledNavLink>
-            </Box>
-            <Box flexDirection="row-reverse" sx={{ py: 1 }}>
-              <StyledNavLink to="/" label="Home">
-                <Avatar
-                  src={`${PUBLIC_URL}/images/me.jpg`}
-                  sx={{
-                    width: 50,
-                    height: 50,
-                  }}>
-                  N M
-                </Avatar>
-              </StyledNavLink>
-            </Box>
-          </Toolbar>
-        </AppBar>
-      </Box>
+      <AppBar variant="outlined" position="sticky" sx={{ flexGrow: 1 }}>
+        <Toolbar variant="dense">
+          <Box justifyContent="center" sx={{ flexGrow: 1 }}>
+            <StyledNavLink to="/" label="Home">
+              <StyledTypography variant="button" bold={true} capitalized={true}>
+                Nilesh Moradiya
+              </StyledTypography>
+            </StyledNavLink>
+          </Box>
+          <Box flexDirection="row-reverse" sx={{ py: 1 }}>
+            <StyledNavLink to="/" label="Home">
+              <Avatar
+                src={`${PUBLIC_URL}/images/me.jpg`}
+                sx={{
+                  width: 50,
+                  height: 50,
+                }}>
+                N M
+              </Avatar>
+            </StyledNavLink>
+          </Box>
+        </Toolbar>
+      </AppBar>
       <MobileMenu />
     </>
   );
 };
 
 const Navigation = () => {
+  const { md: mdDown } = useBreakpoints();
+
   return (
     <>
-      <Hidden mdDown>
-        <DesktopNavigation />
-      </Hidden>
-      <Hidden mdUp>
-        <MobileNavigation />
-      </Hidden>
+      {mdDown && <MobileNavigation />}
+      {!mdDown && <DesktopNavigation />}
     </>
   );
 };
