@@ -1,0 +1,2 @@
+(this["webpackJsonppersonal-site"]=this["webpackJsonppersonal-site"]||[]).push([[10],{459:function(e,t,s){"use strict";s.r(t);var n=s(88),r=s(74),a=s(167),c=(s(0),s(1));t.default=function(e){Object(n.a)(e);var t="Not found";return Object(c.jsx)(c.Fragment,{children:Object(c.jsx)(a.a,{title:t,description:t,children:Object(c.jsx)(r.b,{header:"404",subHeader:t,children:"You seems to be landed on the Mars \ud83d\ude00"})})})}}}]);
+//# sourceMappingURL=10.deac7592.chunk.js.map
