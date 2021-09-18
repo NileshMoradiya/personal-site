@@ -1,2 +1,0 @@
-(this["webpackJsonppersonal-site"]=this["webpackJsonppersonal-site"]||[]).push([[9],{457:function(e,t,c){"use strict";c.r(t);var s=c(89),a=c(213),r=c(77),n=c(168),i=(c(0),c(1));t.default=function(e){Object(s.a)(e);var t="Contact";return Object(i.jsx)(i.Fragment,{children:Object(i.jsx)(n.a,{title:t,description:t,children:Object(i.jsx)(r.b,{header:t,subHeader:"Places where you can reach out to me",children:Object(i.jsx)(a.a,{})})})})}}}]);
-//# sourceMappingURL=9.01566b7a.chunk.js.map
